@@ -1,19 +1,27 @@
-//
-//  ViewController.swift
-//  Todoshka
-//
-//  Created by Amir Zhunussov on 12.12.2022.
-//
-
 import UIKit
 
 class TodoListViewController: UITableViewController {
 
-    var itemArray = ["Find milk", "Calisma", "Work"]
+    var itemArray = [Item]()
+    // interface of user defaults database
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
         UINavigationBar.appearance().barTintColor = UIColor.orange
+        
+        
+        let newItem = Item()
+        newItem.title = "Find milk"
+        newItem.done = true
+        itemArray.append(newItem)
+        
+        
+        // сохраняем наши новые значения в памяти приложение, но они не отображаются, поэтому используя defaults.array мы можем отобразить его приравниваем наш itemArray к новым значениям. Крч коротко отображает новые добавляные вещи и не удаляет их когда приложение закрывают, when app terminate. We retrieve data from plist file
+        
+//        if let items = defaults.array(forKey: "TodoListArray") as? [String] {
+//            itemArray = items
+//        }
     }
         // метод выводящий количество клеток
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -25,7 +33,7 @@ class TodoListViewController: UITableViewController {
         // создаем клетку в tableView и обращаемся к ней
         let cell = tableView.dequeueReusableCell(withIdentifier: "TodoItemCell", for: indexPath)
         // даем ей значени из нашего array
-        cell.textLabel?.text = itemArray[indexPath.row]
+        cell.textLabel?.text = itemArray[indexPath.row].title
         
         return cell
     }
@@ -37,7 +45,11 @@ class TodoListViewController: UITableViewController {
             tableView.cellForRow(at: indexPath)?.accessoryType = .none
         } else {
             tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-        } 
+        }
+        
+        
+        
+        
         
         // нажимая на cell, он просто моргает серым и становится таким же как и был
         tableView.deselectRow(at: indexPath, animated: true)
@@ -55,7 +67,13 @@ class TodoListViewController: UITableViewController {
         // создает кнопку с помощью нашего окна для добавлянения новых cell-ов
         let action = UIAlertAction(title: "Add item", style: .default) { action in
             // добавляет в array новый элеменет который создали в alert
-            self.itemArray.append(textField.text!)
+            let newItem = Item()
+            newItem.title = textField.text!
+            self.itemArray.append(newItem)
+            
+            // сохраняем новые значения в defaults но не отображается в приложение
+            self.defaults.set(self.itemArray, forKey: "TodoListArray")
+            
             // обновляет таблицу чтобы увидеть новые cells
             self.tableView.reloadData()
         }
