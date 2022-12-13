@@ -35,21 +35,16 @@ class TodoListViewController: UITableViewController {
         // даем ей значени из нашего array
         cell.textLabel?.text = itemArray[indexPath.row].title
         
+        itemArray[indexPath.row].done == true ? (cell.accessoryType = .checkmark) : (cell.accessoryType = .none)
+        
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        // нажимая на cell будет отображаться checkmark
-        if tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark {
-            tableView.cellForRow(at: indexPath)?.accessoryType = .none
-        } else {
-            tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-        }
+        itemArray[indexPath.row].done == false ? (itemArray[indexPath.row].done = false) : (itemArray[indexPath.row].done = true)
         
-        
-        
-        
+        tableView.reloadData()
         
         // нажимая на cell, он просто моргает серым и становится таким же как и был
         tableView.deselectRow(at: indexPath, animated: true)
