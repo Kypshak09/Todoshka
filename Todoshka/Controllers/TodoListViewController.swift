@@ -1,14 +1,17 @@
 import UIKit
+import CoreData
 
 class TodoListViewController: UITableViewController {
 
     var itemArray = [Item]()
-    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
+    // чтобы обратиться к Appdelegate откуда мы вытаскиваем дату для controller, мы используем singleton обращаясь к UIApplication, shared значит мы обращаемся именно к приложению которое запущенно. Короче говоря мы теперь имеем доступ к AppDelegate как обьекту
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadItems()
+        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist"))
+//        loadItems()
         
     }
         // метод выводящий количество клеток
@@ -50,11 +53,11 @@ class TodoListViewController: UITableViewController {
         
         // создает кнопку с помощью нашего окна для добавлянения новых cell-ов
         let action = UIAlertAction(title: "Add item", style: .default) { action in
-            // добавляет в array новый элеменет который создали в alert
-            let newItem = Item()
-            newItem.title = textField.text!
-            self.itemArray.append(newItem)
             
+            let newItem = Item(context: self.context)
+            self.itemArray.append(newItem)
+            newItem.title = textField.text!
+            newItem.done = false
             self.saveItem()
             
             // обновляет таблицу чтобы увидеть новые cells
@@ -76,25 +79,25 @@ class TodoListViewController: UITableViewController {
     }
     
     func saveItem() {
-        let encoder = PropertyListEncoder()
+         
         do {
-            let data = try encoder.encode(itemArray)
-            try data.write(to: dataFilePath!)
+            
+            try context.save()
         } catch {
-            print("Error encoding item array , \(error)")
+            print("Error saving context \(error)")
         }
         tableView.reloadData()
     }
     
-    func loadItems() {
-        if let data = try? Data(contentsOf: dataFilePath!) {
-            let decoder = PropertyListDecoder()
-            do {
-                itemArray = try decoder.decode([Item].self, from: data)
-            } catch {
-                print("Error encoding item array , \(error) ")
-            }
-    }
-    
-}
+//    func loadItems() {
+//        if let data = try? Data(contentsOf: dataFilePath!) {
+//            let decoder = PropertyListDecoder()
+//            do {
+//
+//            } catch {
+//
+//            }
+//    }
+//
+//}
 }
