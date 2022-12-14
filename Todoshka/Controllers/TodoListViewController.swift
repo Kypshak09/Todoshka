@@ -3,25 +3,13 @@ import UIKit
 class TodoListViewController: UITableViewController {
 
     var itemArray = [Item]()
-    // interface of user defaults database
-    let defaults = UserDefaults.standard
+    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        UINavigationBar.appearance().barTintColor = UIColor.orange
         
+        loadItems()
         
-        let newItem = Item()
-        newItem.title = "Find milk"
-        newItem.done = true
-        itemArray.append(newItem)
-        
-        
-        // сохраняем наши новые значения в памяти приложение, но они не отображаются, поэтому используя defaults.array мы можем отобразить его приравниваем наш itemArray к новым значениям. Крч коротко отображает новые добавляные вещи и не удаляет их когда приложение закрывают, when app terminate. We retrieve data from plist file
-        
-//        if let items = defaults.array(forKey: "TodoListArray") as? [String] {
-//            itemArray = items
-//        }
     }
         // метод выводящий количество клеток
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -34,7 +22,7 @@ class TodoListViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TodoItemCell", for: indexPath)
         // даем ей значени из нашего array
         cell.textLabel?.text = itemArray[indexPath.row].title
-        
+        // если itemArray true отметь его done если false отметь его none
         itemArray[indexPath.row].done == true ? (cell.accessoryType = .checkmark) : (cell.accessoryType = .none)
         
         return cell
@@ -42,9 +30,10 @@ class TodoListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        itemArray[indexPath.row].done == false ? (itemArray[indexPath.row].done = false) : (itemArray[indexPath.row].done = true)
+        // если itemArray true то нажимая на него делай его false а если false то делай его true
+        itemArray[indexPath.row].done == true ? (itemArray[indexPath.row].done = false) : (itemArray[indexPath.row].done = true)
         
-        tableView.reloadData()
+        saveItem()
         
         // нажимая на cell, он просто моргает серым и становится таким же как и был
         tableView.deselectRow(at: indexPath, animated: true)
@@ -66,8 +55,7 @@ class TodoListViewController: UITableViewController {
             newItem.title = textField.text!
             self.itemArray.append(newItem)
             
-            // сохраняем новые значения в defaults но не отображается в приложение
-            self.defaults.set(self.itemArray, forKey: "TodoListArray")
+            self.saveItem()
             
             // обновляет таблицу чтобы увидеть новые cells
             self.tableView.reloadData()
@@ -87,5 +75,26 @@ class TodoListViewController: UITableViewController {
         present(alert, animated: true)
     }
     
+    func saveItem() {
+        let encoder = PropertyListEncoder()
+        do {
+            let data = try encoder.encode(itemArray)
+            try data.write(to: dataFilePath!)
+        } catch {
+            print("Error encoding item array , \(error)")
+        }
+        tableView.reloadData()
+    }
+    
+    func loadItems() {
+        if let data = try? Data(contentsOf: dataFilePath!) {
+            let decoder = PropertyListDecoder()
+            do {
+                itemArray = try decoder.decode([Item].self, from: data)
+            } catch {
+                print("Error encoding item array , \(error) ")
+            }
+    }
+    
 }
-
+}
