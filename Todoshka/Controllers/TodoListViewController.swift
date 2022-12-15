@@ -11,7 +11,7 @@ class TodoListViewController: UITableViewController {
         super.viewDidLoad()
         
         print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist"))
-//        loadItems()
+        loadItems()
         
     }
         // метод выводящий количество клеток
@@ -25,6 +25,8 @@ class TodoListViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TodoItemCell", for: indexPath)
         // даем ей значени из нашего array
         cell.textLabel?.text = itemArray[indexPath.row].title
+        
+        
         // если itemArray true отметь его done если false отметь его none
         itemArray[indexPath.row].done == true ? (cell.accessoryType = .checkmark) : (cell.accessoryType = .none)
         
@@ -32,7 +34,9 @@ class TodoListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        // для удаления обьектов с экрана и базы данных
+//        context.delete(itemArray[indexPath.row])
+//        itemArray.remove(at: indexPath.row)
         // если itemArray true то нажимая на него делай его false а если false то делай его true
         itemArray[indexPath.row].done == true ? (itemArray[indexPath.row].done = false) : (itemArray[indexPath.row].done = true)
         
@@ -53,11 +57,14 @@ class TodoListViewController: UITableViewController {
         
         // создает кнопку с помощью нашего окна для добавлянения новых cell-ов
         let action = UIAlertAction(title: "Add item", style: .default) { action in
-            
+            // context вещь через которую мы обращаемся к базе данных и сохраняем там наши значения, Item class создается автоматически с помощью Datamodel, в нем есть entity Item и это его класс
             let newItem = Item(context: self.context)
+            // добавляет новый элемент
             self.itemArray.append(newItem)
             newItem.title = textField.text!
+            // изначально когда создается новый элемент он будет не сделан
             newItem.done = false
+            // сохранить значение новое. self потому что он  в closure
             self.saveItem()
             
             // обновляет таблицу чтобы увидеть новые cells
@@ -77,11 +84,9 @@ class TodoListViewController: UITableViewController {
         // меторд present делает чтобы отобржалось окно
         present(alert, animated: true)
     }
-    
+    // функция сохрающая новые задания
     func saveItem() {
-         
         do {
-            
             try context.save()
         } catch {
             print("Error saving context \(error)")
@@ -89,15 +94,14 @@ class TodoListViewController: UITableViewController {
         tableView.reloadData()
     }
     
-//    func loadItems() {
-//        if let data = try? Data(contentsOf: dataFilePath!) {
-//            let decoder = PropertyListDecoder()
-//            do {
-//
-//            } catch {
-//
-//            }
-//    }
-//
-//}
+    func loadItems() {
+        let request: NSFetchRequest<Item> = Item.fetchRequest()
+        do {
+            
+        itemArray = try context.fetch(request)
+        } catch {
+            print("Error fetching data from context \(error)")
+        }
+
+}
 }

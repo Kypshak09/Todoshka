@@ -6,7 +6,7 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>02A73479-9AFA-4A1E-A899-DEE2ED71F0D2</key>
+		<key>119A8E7D-6791-417E-9EF1-5C768D51E144</key>
 		<dict>
 			<key>className</key>
 			<string>DBGConsoleLog</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>02A73479-9AFA-4A1E-A899-DEE2ED71F0D2.xcactivitylog</string>
+			<string>119A8E7D-6791-417E-9EF1-5C768D51E144.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -32,15 +32,15 @@
 			<key>signature</key>
 			<string>Run Todoshka</string>
 			<key>timeStartedRecording</key>
-			<real>692700530.82121396</real>
+			<real>692773705.97287095</real>
 			<key>timeStoppedRecording</key>
-			<real>692702697.11707795</real>
+			<real>692773739.33312094</real>
 			<key>title</key>
 			<string>Run Todoshka</string>
 			<key>uniqueIdentifier</key>
-			<string>02A73479-9AFA-4A1E-A899-DEE2ED71F0D2</string>
+			<string>119A8E7D-6791-417E-9EF1-5C768D51E144</string>
 		</dict>
-		<key>65B9ADC7-2DFD-41DC-B5A4-3A1A18D22D9A</key>
+		<key>98152209-3AE2-4A16-9C1E-E5AF4593DAB7</key>
 		<dict>
 			<key>className</key>
 			<string>DBGConsoleLog</string>
@@ -49,7 +49,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>65B9ADC7-2DFD-41DC-B5A4-3A1A18D22D9A.xcactivitylog</string>
+			<string>98152209-3AE2-4A16-9C1E-E5AF4593DAB7.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -66,15 +66,15 @@
 			<key>signature</key>
 			<string>Run Todoshka</string>
 			<key>timeStartedRecording</key>
-			<real>692736922.52619696</real>
+			<real>692771863.85351598</real>
 			<key>timeStoppedRecording</key>
-			<real>692736934.12981904</real>
+			<real>692772371.31810904</real>
 			<key>title</key>
 			<string>Run Todoshka</string>
 			<key>uniqueIdentifier</key>
-			<string>65B9ADC7-2DFD-41DC-B5A4-3A1A18D22D9A</string>
+			<string>98152209-3AE2-4A16-9C1E-E5AF4593DAB7</string>
 		</dict>
-		<key>7AAE5AFA-6B8D-4A64-86EE-67E8FAF52921</key>
+		<key>CF3512B3-20ED-4206-8DB9-CA46F4391698</key>
 		<dict>
 			<key>className</key>
 			<string>DBGConsoleLog</string>
@@ -83,7 +83,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>7AAE5AFA-6B8D-4A64-86EE-67E8FAF52921.xcactivitylog</string>
+			<string>CF3512B3-20ED-4206-8DB9-CA46F4391698.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -100,15 +100,15 @@
 			<key>signature</key>
 			<string>Run Todoshka</string>
 			<key>timeStartedRecording</key>
-			<real>692736771.38051999</real>
+			<real>692773741.09790695</real>
 			<key>timeStoppedRecording</key>
-			<real>692736921.51113605</real>
+			<real>692773777.99203098</real>
 			<key>title</key>
 			<string>Run Todoshka</string>
 			<key>uniqueIdentifier</key>
-			<string>7AAE5AFA-6B8D-4A64-86EE-67E8FAF52921</string>
+			<string>CF3512B3-20ED-4206-8DB9-CA46F4391698</string>
 		</dict>
-		<key>9D41F428-DBA9-426F-BE1F-C94E8603A6B3</key>
+		<key>ECC91559-BB31-47F1-9025-B189F612C608</key>
 		<dict>
 			<key>className</key>
 			<string>DBGConsoleLog</string>
@@ -117,7 +117,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>9D41F428-DBA9-426F-BE1F-C94E8603A6B3.xcactivitylog</string>
+			<string>ECC91559-BB31-47F1-9025-B189F612C608.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -134,13 +134,13 @@
 			<key>signature</key>
 			<string>Run Todoshka</string>
 			<key>timeStartedRecording</key>
-			<real>692732959.51427102</real>
+			<real>692737106.28702903</real>
 			<key>timeStoppedRecording</key>
-			<real>692736764.12535596</real>
+			<real>692737296.32515395</real>
 			<key>title</key>
 			<string>Run Todoshka</string>
 			<key>uniqueIdentifier</key>
-			<string>9D41F428-DBA9-426F-BE1F-C94E8603A6B3</string>
+			<string>ECC91559-BB31-47F1-9025-B189F612C608</string>
 		</dict>
 	</dict>
 </dict>
