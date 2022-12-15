@@ -9,16 +9,16 @@ class TodoListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist"))
         loadItems()
         
     }
+    // MARK: - Table view number of rows
         // метод выводящий количество клеток
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //количество клеток. зависит от array
         return itemArray.count
     }
+    // MARK: - Table view do cell
     // метод для отображения клеток на tableView
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // создаем клетку в tableView и обращаемся к ней
@@ -32,6 +32,7 @@ class TodoListViewController: UITableViewController {
         
         return cell
     }
+    //MARK: - Table view did select row at
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // для удаления обьектов с экрана и базы данных
@@ -45,8 +46,7 @@ class TodoListViewController: UITableViewController {
         // нажимая на cell, он просто моргает серым и становится таким же как и был
         tableView.deselectRow(at: indexPath, animated: true)
     }
-
-    
+    // MARK: Add button
     
     @IBAction func addButton(_ sender: UIBarButtonItem) {
         // переменная для того чтобы использовать из text field text в action
@@ -84,6 +84,8 @@ class TodoListViewController: UITableViewController {
         // меторд present делает чтобы отобржалось окно
         present(alert, animated: true)
     }
+    
+    //MARK: - function saving new items
     // функция сохрающая новые задания
     func saveItem() {
         do {
@@ -93,15 +95,36 @@ class TodoListViewController: UITableViewController {
         }
         tableView.reloadData()
     }
-    
-    func loadItems() {
-        let request: NSFetchRequest<Item> = Item.fetchRequest()
+    // MARK: - function loading new items
+    func loadItems(request: NSFetchRequest<Item> = Item.fetchRequest()) {
         do {
-            
         itemArray = try context.fetch(request)
         } catch {
             print("Error fetching data from context \(error)")
         }
-
+        tableView.reloadData()
 }
+}
+
+
+// MARK: Search Bar methods
+extension TodoListViewController: UISearchBarDelegate  {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let request: NSFetchRequest<Item> = Item.fetchRequest()
+        
+        request.predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchBar.text!)
+        
+        request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
+        
+        loadItems(request: request)
+}
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text?.count == 0 {
+            loadItems()
+            DispatchQueue.main.async {
+                searchBar.resignFirstResponder()
+            }
+        }
+    }
 }

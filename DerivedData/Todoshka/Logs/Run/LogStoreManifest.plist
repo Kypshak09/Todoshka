@@ -6,6 +6,74 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
+		<key>00250590-104B-4393-A78C-69741FC516C9</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>00250590-104B-4393-A78C-69741FC516C9.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Todoshka project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Todoshka</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run Todoshka</string>
+			<key>timeStartedRecording</key>
+			<real>692779374.69349396</real>
+			<key>timeStoppedRecording</key>
+			<real>692779407.41214299</real>
+			<key>title</key>
+			<string>Run Todoshka</string>
+			<key>uniqueIdentifier</key>
+			<string>00250590-104B-4393-A78C-69741FC516C9</string>
+		</dict>
+		<key>039CC524-B618-4BD9-98DB-08ED77EE264A</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>039CC524-B618-4BD9-98DB-08ED77EE264A.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Todoshka project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Todoshka</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run Todoshka</string>
+			<key>timeStartedRecording</key>
+			<real>692777407.51553202</real>
+			<key>timeStoppedRecording</key>
+			<real>692777715.77671802</real>
+			<key>title</key>
+			<string>Run Todoshka</string>
+			<key>uniqueIdentifier</key>
+			<string>039CC524-B618-4BD9-98DB-08ED77EE264A</string>
+		</dict>
 		<key>119A8E7D-6791-417E-9EF1-5C768D51E144</key>
 		<dict>
 			<key>className</key>
@@ -39,6 +107,142 @@
 			<string>Run Todoshka</string>
 			<key>uniqueIdentifier</key>
 			<string>119A8E7D-6791-417E-9EF1-5C768D51E144</string>
+		</dict>
+		<key>1B952BBF-4243-4F30-8BFF-D68888FB3C77</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>1B952BBF-4243-4F30-8BFF-D68888FB3C77.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Todoshka project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Todoshka</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run Todoshka</string>
+			<key>timeStartedRecording</key>
+			<real>692780473.83864701</real>
+			<key>timeStoppedRecording</key>
+			<real>692780492.57417202</real>
+			<key>title</key>
+			<string>Run Todoshka</string>
+			<key>uniqueIdentifier</key>
+			<string>1B952BBF-4243-4F30-8BFF-D68888FB3C77</string>
+		</dict>
+		<key>43D5F67F-23BE-46AC-A872-CBD5F51574E1</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>43D5F67F-23BE-46AC-A872-CBD5F51574E1.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Todoshka project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Todoshka</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run Todoshka</string>
+			<key>timeStartedRecording</key>
+			<real>692776788.29421997</real>
+			<key>timeStoppedRecording</key>
+			<real>692776835.37571096</real>
+			<key>title</key>
+			<string>Run Todoshka</string>
+			<key>uniqueIdentifier</key>
+			<string>43D5F67F-23BE-46AC-A872-CBD5F51574E1</string>
+		</dict>
+		<key>6811B24D-9E80-4E8D-8044-9F2927779DF1</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>6811B24D-9E80-4E8D-8044-9F2927779DF1.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Todoshka project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Todoshka</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run Todoshka</string>
+			<key>timeStartedRecording</key>
+			<real>692780185.14301205</real>
+			<key>timeStoppedRecording</key>
+			<real>692780473.05385399</real>
+			<key>title</key>
+			<string>Run Todoshka</string>
+			<key>uniqueIdentifier</key>
+			<string>6811B24D-9E80-4E8D-8044-9F2927779DF1</string>
+		</dict>
+		<key>6CF621AA-80DD-4105-8651-E805626B239B</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>6CF621AA-80DD-4105-8651-E805626B239B.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Todoshka project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Todoshka</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run Todoshka</string>
+			<key>timeStartedRecording</key>
+			<real>692779459.51346302</real>
+			<key>timeStoppedRecording</key>
+			<real>692779469.49579203</real>
+			<key>title</key>
+			<string>Run Todoshka</string>
+			<key>uniqueIdentifier</key>
+			<string>6CF621AA-80DD-4105-8651-E805626B239B</string>
 		</dict>
 		<key>98152209-3AE2-4A16-9C1E-E5AF4593DAB7</key>
 		<dict>
@@ -74,6 +278,40 @@
 			<key>uniqueIdentifier</key>
 			<string>98152209-3AE2-4A16-9C1E-E5AF4593DAB7</string>
 		</dict>
+		<key>ACDF80BE-0FFB-4566-A573-5E0A57E66572</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>ACDF80BE-0FFB-4566-A573-5E0A57E66572.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Todoshka project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Todoshka</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run Todoshka</string>
+			<key>timeStartedRecording</key>
+			<real>692776836.12076104</real>
+			<key>timeStoppedRecording</key>
+			<real>692776952.99498999</real>
+			<key>title</key>
+			<string>Run Todoshka</string>
+			<key>uniqueIdentifier</key>
+			<string>ACDF80BE-0FFB-4566-A573-5E0A57E66572</string>
+		</dict>
 		<key>CF3512B3-20ED-4206-8DB9-CA46F4391698</key>
 		<dict>
 			<key>className</key>
@@ -108,6 +346,74 @@
 			<key>uniqueIdentifier</key>
 			<string>CF3512B3-20ED-4206-8DB9-CA46F4391698</string>
 		</dict>
+		<key>E443FFCB-DE32-4BBC-BFFA-F9064098487B</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>E443FFCB-DE32-4BBC-BFFA-F9064098487B.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Todoshka project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Todoshka</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run Todoshka</string>
+			<key>timeStartedRecording</key>
+			<real>692777715.65307903</real>
+			<key>timeStoppedRecording</key>
+			<real>692777766.03384495</real>
+			<key>title</key>
+			<string>Run Todoshka</string>
+			<key>uniqueIdentifier</key>
+			<string>E443FFCB-DE32-4BBC-BFFA-F9064098487B</string>
+		</dict>
+		<key>EA11C967-B614-469D-AD42-AB91E0982409</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>EA11C967-B614-469D-AD42-AB91E0982409.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Todoshka project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Todoshka</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run Todoshka</string>
+			<key>timeStartedRecording</key>
+			<real>692777773.64479697</real>
+			<key>timeStoppedRecording</key>
+			<real>692777798.23506296</real>
+			<key>title</key>
+			<string>Run Todoshka</string>
+			<key>uniqueIdentifier</key>
+			<string>EA11C967-B614-469D-AD42-AB91E0982409</string>
+		</dict>
 		<key>ECC91559-BB31-47F1-9025-B189F612C608</key>
 		<dict>
 			<key>className</key>
@@ -141,6 +447,40 @@
 			<string>Run Todoshka</string>
 			<key>uniqueIdentifier</key>
 			<string>ECC91559-BB31-47F1-9025-B189F612C608</string>
+		</dict>
+		<key>F5277028-922C-4C31-8A45-02B358660775</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>F5277028-922C-4C31-8A45-02B358660775.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Todoshka project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Todoshka</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run Todoshka</string>
+			<key>timeStartedRecording</key>
+			<real>692780122.56374598</real>
+			<key>timeStoppedRecording</key>
+			<real>692780184.36759305</real>
+			<key>title</key>
+			<string>Run Todoshka</string>
+			<key>uniqueIdentifier</key>
+			<string>F5277028-922C-4C31-8A45-02B358660775</string>
 		</dict>
 	</dict>
 </dict>
