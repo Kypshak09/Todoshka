@@ -11,6 +11,8 @@ import CoreData
 class CategoryViewController: UITableViewController {
 
     var categoryArray = [Category]()
+    
+    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
@@ -23,14 +25,15 @@ class CategoryViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return categoryArray.count
     }
-        
+    //what should happen when we click inside of the category
+override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell",for: indexPath)
+    cell.textLabel?.text = categoryArray[indexPath.row].name
+    return cell
+}
     // MARK: - TableView Delegate Method
-        //what should happen when we click inside of the category
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell",for: indexPath)
-        cell.textLabel?.text = categoryArray[indexPath.row].name
-        return cell
-    }
+
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        context.delete(categoryArray[indexPath.row])
 //        categoryArray.remove(at: indexPath.row)
@@ -38,18 +41,22 @@ class CategoryViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         saveCategory()
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! TodoListViewController
         
+        if let indexPath = tableView.indexPathForSelectedRow {
+            destinationVC.selectedCategory = categoryArray[indexPath.row]
+        }
+    }
     
-    
-    
+    //MARK: - Add new categories
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         var textField = UITextField()
         let alert = UIAlertController(title: "add new category", message: "", preferredStyle: .alert)
         let action = UIAlertAction(title: "Add category", style: .default) { action in
             let newCategory = Category(context: self.context)
-            self.categoryArray.append(newCategory)
             newCategory.name = textField.text!
+            self.categoryArray.append(newCategory)
             self.saveCategory()
             self.tableView.reloadData()
         }

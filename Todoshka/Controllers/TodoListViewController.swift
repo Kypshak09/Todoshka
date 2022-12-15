@@ -4,14 +4,19 @@ import CoreData
 class TodoListViewController: UITableViewController {
 
     var itemArray = [Item]()
+    
+    var selectedCategory: Category? {
+        didSet {
+            loadItems()
+        }
+    }
+    
     // чтобы обратиться к Appdelegate откуда мы вытаскиваем дату для controller, мы используем singleton обращаясь к UIApplication, shared значит мы обращаемся именно к приложению которое запущенно. Короче говоря мы теперь имеем доступ к AppDelegate как обьекту
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.backBarButtonItem?.tintColor = .black
-        loadItems()
-        
     }
     // MARK: - Table view number of rows
         // метод выводящий количество клеток
