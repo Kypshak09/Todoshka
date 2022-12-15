@@ -9,6 +9,7 @@ class TodoListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.backBarButtonItem?.tintColor = .black
         loadItems()
         
     }

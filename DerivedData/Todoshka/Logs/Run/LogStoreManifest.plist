@@ -448,6 +448,74 @@
 			<key>uniqueIdentifier</key>
 			<string>ECC91559-BB31-47F1-9025-B189F612C608</string>
 		</dict>
+		<key>EE2037DF-E8A6-48BB-889A-452B4A045080</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>EE2037DF-E8A6-48BB-889A-452B4A045080.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Todoshka project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Todoshka</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run Todoshka</string>
+			<key>timeStartedRecording</key>
+			<real>692782905.12336004</real>
+			<key>timeStoppedRecording</key>
+			<real>692782916.71577096</real>
+			<key>title</key>
+			<string>Run Todoshka</string>
+			<key>uniqueIdentifier</key>
+			<string>EE2037DF-E8A6-48BB-889A-452B4A045080</string>
+		</dict>
+		<key>F197AF18-EA42-46B1-B17C-0A1DFA8865C0</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>F197AF18-EA42-46B1-B17C-0A1DFA8865C0.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Todoshka project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Todoshka</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run Todoshka</string>
+			<key>timeStartedRecording</key>
+			<real>692782352.36604095</real>
+			<key>timeStoppedRecording</key>
+			<real>692782902.930861</real>
+			<key>title</key>
+			<string>Run Todoshka</string>
+			<key>uniqueIdentifier</key>
+			<string>F197AF18-EA42-46B1-B17C-0A1DFA8865C0</string>
+		</dict>
 		<key>F5277028-922C-4C31-8A45-02B358660775</key>
 		<dict>
 			<key>className</key>
