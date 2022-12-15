@@ -71,6 +71,7 @@ class TodoListViewController: UITableViewController {
             // изначально когда создается новый элемент он будет не сделан
             newItem.done = false
             // сохранить значение новое. self потому что он  в closure
+            newItem.parentCategory = self.selectedCategory
             self.saveItem()
             
             // обновляет таблицу чтобы увидеть новые cells
@@ -102,7 +103,16 @@ class TodoListViewController: UITableViewController {
         tableView.reloadData()
     }
     // MARK: - function loading new items
-    func loadItems(request: NSFetchRequest<Item> = Item.fetchRequest()) {
+    func loadItems(request: NSFetchRequest<Item> = Item.fetchRequest(), predicate: NSPredicate? = nil) {
+        
+        let categoryPredicate = NSPredicate(format: "parentCategory.name MATCHES %@", selectedCategory!.name!)
+        
+        if let additionalPredicate = predicate {
+            request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [categoryPredicate, additionalPredicate])
+        } else {
+            request.predicate = categoryPredicate
+        }
+        
         do {
         itemArray = try context.fetch(request)
         } catch {
@@ -116,13 +126,14 @@ class TodoListViewController: UITableViewController {
 // MARK: Search Bar methods
 extension TodoListViewController: UISearchBarDelegate  {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
         let request: NSFetchRequest<Item> = Item.fetchRequest()
         
-        request.predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchBar.text!)
+        let predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchBar.text!)
         
         request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
         
-        loadItems(request: request)
+        loadItems(request: request, predicate: predicate)
 }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

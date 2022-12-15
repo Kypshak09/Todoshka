@@ -40,6 +40,40 @@
 			<key>uniqueIdentifier</key>
 			<string>0E461C79-E620-46AA-9704-1CD83858BCC3</string>
 		</dict>
+		<key>4A7B3A71-2E18-47CD-9306-7F4521E3D385</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>4A7B3A71-2E18-47CD-9306-7F4521E3D385.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Todoshka project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Todoshka</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run Todoshka</string>
+			<key>timeStartedRecording</key>
+			<real>692793307.53736699</real>
+			<key>timeStoppedRecording</key>
+			<real>692798284.17516196</real>
+			<key>title</key>
+			<string>Run Todoshka</string>
+			<key>uniqueIdentifier</key>
+			<string>4A7B3A71-2E18-47CD-9306-7F4521E3D385</string>
+		</dict>
 	</dict>
 </dict>
 </plist>
