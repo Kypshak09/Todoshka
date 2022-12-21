@@ -18,6 +18,27 @@ class TodoListViewController: UITableViewController {
         super.viewDidLoad()
         navigationItem.backBarButtonItem?.tintColor = .black
     }
+    
+    
+    
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            tableView.beginUpdates()
+            tableView.deleteRows(at: [indexPath], with: .right)
+            // для удаления обьектов с экрана и базы данных
+            context.delete(itemArray[indexPath.row])
+            itemArray.remove(at: indexPath.row)
+            
+            tableView.endUpdates()
+            tableView.reloadData()
+            saveItem()
+        }
+    }
+    
     // MARK: - Table view number of rows
         // метод выводящий количество клеток
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -47,6 +68,18 @@ class TodoListViewController: UITableViewController {
         // если itemArray true то нажимая на него делай его false а если false то делай его true
         itemArray[indexPath.row].done == true ? (itemArray[indexPath.row].done = false) : (itemArray[indexPath.row].done = true)
         
+        if itemArray[indexPath.row].done == true  {
+            let alert = UIAlertController(title: "Yeah boooy", message: "Super", preferredStyle: .alert)
+            let action = UIAlertAction(title: "Go to next goal", style: .default, handler: nil)
+            alert.addAction(action)
+            present(alert, animated: true, completion: nil)
+        } else if itemArray[indexPath.row].done == false {
+            let alert = UIAlertController(title: "JUST DO IT!", message: "LET'S GOOO", preferredStyle: .alert)
+            let action = UIAlertAction(title: "YOU CAN DO IT", style: .default, handler: nil)
+            alert.addAction(action)
+            present(alert, animated: true, completion: nil)
+        }
+    
         saveItem()
         
         // нажимая на cell, он просто моргает серым и становится таким же как и был
