@@ -42,7 +42,7 @@ class InfromationViewController: UIViewController {
     let textField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Enter description of ur goal"
-        textField.textAlignment = .natural
+        textField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.top
         textField.font = .systemFont(ofSize: 20, weight: .light)
         return textField
     }()
@@ -59,7 +59,7 @@ class InfromationViewController: UIViewController {
         
         view.addSubview(textField)
         textField.snp.makeConstraints { make in
-            make.centerY.equalToSuperview().offset(-200)
+            make.centerY.equalToSuperview().offset(-100)
             make.centerX.equalToSuperview().offset(-50)
             make.width.equalTo(300)
             make.height.equalTo(400)
