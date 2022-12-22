@@ -76,8 +76,8 @@
 		25BDCF672948716F00411FDA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				25D2E55F294731980021D379 /* TodoListViewController.swift */,
 				25BD8F80294B04C200C6698C /* CategoryViewController.swift */,
+				25D2E55F294731980021D379 /* TodoListViewController.swift */,
 				252800D729541E640011A1D9 /* InfromationViewController.swift */,
 			);
 			path = Controllers;

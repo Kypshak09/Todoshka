@@ -10,8 +10,20 @@ import SnapKit
 import CoreData
 
 class InfromationViewController: UIViewController {
+//
+//    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+//    var someText: String = ""
     
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+//    var textArray = [DescriptionText]()
+    
+//    var selectedText: DescriptionText? {
+//        didSet {
+//            loadText()
+//        }
+//    }
+    
+    
+   
     
 //    let buttonRight: UIBarButtonItem = {
 //        let button = UIBarButtonItem()
@@ -27,8 +39,10 @@ class InfromationViewController: UIViewController {
 //        return button
 //    }()
 //
-    let textField: UITextView = {
-        let textField = UITextView()
+    let textField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Enter description of ur goal"
+        textField.textAlignment = .natural
         textField.font = .systemFont(ofSize: 20, weight: .light)
         return textField
     }()
@@ -60,10 +74,30 @@ class InfromationViewController: UIViewController {
     
     
     
-    func save() {
-        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-            appDelegate.saveContext()
-        }
-    }
+    
+    
+//    func saveText() {
+//        do {
+//            try context.save()
+//        } catch {
+//            print("Error saving context \(error)")
+//        }
+//    }
+//
+//    func loadText(request: NSFetchRequest<DescriptionText> = DescriptionText.fetchRequest(), predicate: NSPredicate? = nil) {
+//        let textPredicate = NSPredicate(format: "relationship.text MATCHES%@", selectedText!.text!)
+//
+//        if let additonalPredicate = predicate {
+//            request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [textPredicate, additonalPredicate])
+//        } else {
+//            request.predicate = textPredicate
+//        }
+//
+//        do {
+//            textArray = try context.fetch(request)
+//        } catch {
+//            print("Error fetching data from context \(error)")
+//        }
+//    }
     
 }
