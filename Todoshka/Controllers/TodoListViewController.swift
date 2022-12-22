@@ -153,10 +153,15 @@ class TodoListViewController: UITableViewController {
         }
         tableView.reloadData()
 }
+    
+    // MARK: - description button
+    @IBAction func informationButton(_ sender: UIButton) {
+        navigationController?.pushViewController(InfromationViewController(), animated: true)
+    }
 }
 
 
-// MARK: Search Bar methods
+// MARK: - Search Bar methods
 extension TodoListViewController: UISearchBarDelegate  {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
