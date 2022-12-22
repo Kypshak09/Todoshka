@@ -4,13 +4,19 @@
         <attribute name="name" attributeType="String"/>
         <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="parentCategory" inverseEntity="Item"/>
     </entity>
+    <entity name="DescriptionText" representedClassName="DescriptionText" syncable="YES" codeGenerationType="class">
+        <attribute name="text" optional="YES" attributeType="String"/>
+        <relationship name="newRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="newRelationship" inverseEntity="Item"/>
+    </entity>
     <entity name="Item" representedClassName=".Item" syncable="YES" codeGenerationType="class">
         <attribute name="done" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="title" attributeType="String"/>
+        <relationship name="newRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DescriptionText" inverseName="newRelationship" inverseEntity="DescriptionText"/>
         <relationship name="parentCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="items" inverseEntity="Category"/>
     </entity>
     <elements>
-        <element name="Item" positionX="-79.9742431640625" positionY="-27.8997802734375" width="128" height="88"/>
-        <element name="Category" positionX="-287.9344482421875" positionY="-20.46087646484375" width="128" height="73"/>
+        <element name="Item" positionX="-72.87969970703125" positionY="-26.08905029296875" width="128" height="103"/>
+        <element name="Category" positionX="-299.2684936523438" positionY="-24.79916381835938" width="128" height="73"/>
+        <element name="DescriptionText" positionX="-100.7525024414062" positionY="169.5409240722656" width="128" height="73"/>
     </elements>
 </model>
