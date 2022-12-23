@@ -156,7 +156,7 @@ class TodoListViewController: UITableViewController {
     
     // MARK: - description button
     @IBAction func informationButton(_ sender: UIButton) {
-        navigationController?.pushViewController(InfromationViewController(), animated: true)
+        navigationController?.pushViewController(TableOfInformation(), animated: true)
     }
 }
 

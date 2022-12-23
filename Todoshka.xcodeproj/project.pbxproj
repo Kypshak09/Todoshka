@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2516FAC62955F3360090BD62 /* TableOfInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2516FAC52955F3360090BD62 /* TableOfInformation.swift */; };
 		252800D829541E640011A1D9 /* InfromationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252800D729541E640011A1D9 /* InfromationViewController.swift */; };
 		252800E3295420A80011A1D9 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 252800E2295420A80011A1D9 /* SnapKit */; };
 		254977F2294A490A009F2AC9 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 254977F0294A490A009F2AC9 /* DataModel.xcdatamodeld */; };
@@ -33,6 +34,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2516FAC52955F3360090BD62 /* TableOfInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableOfInformation.swift; sourceTree = "<group>"; };
 		252800D729541E640011A1D9 /* InfromationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfromationViewController.swift; sourceTree = "<group>"; };
 		254977F1294A490A009F2AC9 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		25BD8F80294B04C200C6698C /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			children = (
 				25BD8F80294B04C200C6698C /* CategoryViewController.swift */,
 				25D2E55F294731980021D379 /* TodoListViewController.swift */,
+				2516FAC52955F3360090BD62 /* TableOfInformation.swift */,
 				252800D729541E640011A1D9 /* InfromationViewController.swift */,
 			);
 			path = Controllers;
@@ -210,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2516FAC62955F3360090BD62 /* TableOfInformation.swift in Sources */,
 				25BD8F81294B04C200C6698C /* CategoryViewController.swift in Sources */,
 				254977F2294A490A009F2AC9 /* DataModel.xcdatamodeld in Sources */,
 				25D2E560294731980021D379 /* TodoListViewController.swift in Sources */,

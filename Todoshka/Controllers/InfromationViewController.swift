@@ -10,45 +10,34 @@ import SnapKit
 import CoreData
 
 class InfromationViewController: UIViewController {
-//
-//    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-//    var someText: String = ""
+
+    let textView: UITextView = {
+        let textView = UITextView()
+        textView.font = .systemFont(ofSize: 20, weight: .light)
+        textView.backgroundColor = .lightGray
+        return textView
+    }()
     
-//    var textArray = [DescriptionText]()
-    
-//    var selectedText: DescriptionText? {
-//        didSet {
-//            loadText()
-//        }
-//    }
-    
-    
-   
-    
-//    let buttonRight: UIBarButtonItem = {
-//        let button = UIBarButtonItem()
-//        button.tintColor = .black
-//        button.setBackgroundImage(UIImage(systemName: "add"), for: .normal, barMetrics: .default)
-//        return button
-//    }()
-    
-//    let buttonRightCorner: UIButton = {
-//        let button = UIButton()
-//        button.tintColor = .black
-//        button.setImage(UIImage(systemName: "add"), for: .normal)
-//        return button
-//    }()
-//
-    let textField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "Enter description of ur goal"
-        textField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.top
-        textField.font = .systemFont(ofSize: 20, weight: .light)
-        return textField
+    let label: UILabel = {
+        let label = UILabel()
+        label.text = "Write your descripton about goal"
+        label.font = .systemFont(ofSize: 20, weight: .bold)
+        return label
     }()
     
     @objc func rightButton() {
         print("is working")
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "DescriptionText", in: context)
+        let newText = DescriptionText(entity: entity!, insertInto: context)
+        newText.text = textView.text
+        
+        do {
+            try context.save()
+        } catch {
+            print(error)
+        }
     }
     
     override func viewDidLoad() {
@@ -57,47 +46,19 @@ class InfromationViewController: UIViewController {
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(rightButton))
         
-        view.addSubview(textField)
-        textField.snp.makeConstraints { make in
+        view.addSubview(textView)
+        textView.snp.makeConstraints { make in
             make.centerY.equalToSuperview().offset(-100)
-            make.centerX.equalToSuperview().offset(-50)
-            make.width.equalTo(300)
+            make.centerX.equalToSuperview().offset(0)
+            make.width.equalTo(350)
             make.height.equalTo(400)
         }
-//        view.addSubview(buttonRight)
-//        buttonRight.snp.makeConstraints { make in
-//            make.centerX.equalToSuperview().offset(300)
-//            make.centerY.equalToSuperview().offset(100)
-//            make.width.height.equalTo(100)
-//        }
+        
+        view.addSubview(label)
+        label.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview().offset(-330)
+            make.width.height.equalTo(400)
+        }
     }
-    
-    
-    
-    
-    
-//    func saveText() {
-//        do {
-//            try context.save()
-//        } catch {
-//            print("Error saving context \(error)")
-//        }
-//    }
-//
-//    func loadText(request: NSFetchRequest<DescriptionText> = DescriptionText.fetchRequest(), predicate: NSPredicate? = nil) {
-//        let textPredicate = NSPredicate(format: "relationship.text MATCHES%@", selectedText!.text!)
-//
-//        if let additonalPredicate = predicate {
-//            request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [textPredicate, additonalPredicate])
-//        } else {
-//            request.predicate = textPredicate
-//        }
-//
-//        do {
-//            textArray = try context.fetch(request)
-//        } catch {
-//            print("Error fetching data from context \(error)")
-//        }
-//    }
-    
 }
