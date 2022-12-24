@@ -85,7 +85,7 @@ class TodoListViewController: UITableViewController {
         // нажимая на cell, он просто моргает серым и становится таким же как и был
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    // MARK: Add button
+    // MARK: - Add button
     
     @IBAction func addButton(_ sender: UIBarButtonItem) {
         // переменная для того чтобы использовать из text field text в action

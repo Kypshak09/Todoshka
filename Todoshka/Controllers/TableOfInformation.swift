@@ -9,8 +9,17 @@ import UIKit
 import CoreData
 import SnapKit
 
+var textList = [DescriptionText]()
+
 class TableOfInformation: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    var selectedText: DescriptionText? {
+        didSet {
+            loadItems()
+        }
+    }
+    
+    var firstLoad = true
     
 // MARK: - table view methods
     let tableView: UITableView = {
@@ -19,15 +28,45 @@ class TableOfInformation: UIViewController, UITableViewDelegate, UITableViewData
     }()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        return textList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath) as? TableViewCell else {
             return UITableViewCell()
         }
+        
+        let thisText: DescriptionText!
+        thisText = textList[indexPath.row]
+        cell.label.text = thisText.text
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            tableView.beginUpdates()
+            tableView.deleteRows(at: [indexPath], with: .right)
+            // для удаления обьектов с экрана и базы данных
+            textList.remove(at: indexPath.row)
+            
+            tableView.endUpdates()
+            tableView.reloadData()
+        }
+    }
+    
   // MARK: - label object
     let labelTextOfDescription: UILabel = {
         let label = UILabel()
@@ -42,6 +81,22 @@ class TableOfInformation: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if(firstLoad){
+            firstLoad = false
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "DescriptionText")
+            do {
+                let results: NSArray = try context.fetch(request) as NSArray
+                for result in results {
+                    let text = result as! DescriptionText
+                    textList.append(text)
+                }
+            }
+            catch {
+                print("Error fetch \(error)")
+            }
+        }
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(righButton))
         tableView.delegate = self
         tableView.dataSource = self
@@ -56,4 +111,23 @@ class TableOfInformation: UIViewController, UITableViewDelegate, UITableViewData
         }
         
     }
+    
+    func loadItems(request: NSFetchRequest<DescriptionText> = DescriptionText.fetchRequest(), predicate: NSPredicate? = nil) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+        let categoryPredicate = NSPredicate(format: "new.text MATCHES %@", selectedText!.text!)
+        
+        if let additionalPredicate = predicate {
+            request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [categoryPredicate, additionalPredicate])
+        } else {
+            request.predicate = categoryPredicate
+        }
+        
+        do {
+        textList = try context.fetch(request)
+        } catch {
+            print("Error fetching data from context \(error)")
+        }
+        tableView.reloadData()
+}
 }

@@ -10,6 +10,8 @@ import SnapKit
 import CoreData
 
 class InfromationViewController: UIViewController {
+    
+   
 
     let textView: UITextView = {
         let textView = UITextView()
@@ -35,6 +37,8 @@ class InfromationViewController: UIViewController {
         
         do {
             try context.save()
+            textList.append(newText)
+            navigationController?.popViewController(animated: true)
         } catch {
             print(error)
         }

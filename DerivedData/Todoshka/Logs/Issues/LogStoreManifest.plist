@@ -6,7 +6,7 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>FCBAF884-3AD0-4220-85A9-D23399226D20</key>
+		<key>95171977-860F-4CE8-9173-CD3A69EECEA7</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogMajorGroupSection</string>
@@ -15,24 +15,24 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.target.product-type.application</string>
 			<key>fileName</key>
-			<string>FCBAF884-3AD0-4220-85A9-D23399226D20.xcactivitylog</string>
+			<string>95171977-860F-4CE8-9173-CD3A69EECEA7.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
 			<dict>
 				<key>highLevelStatus</key>
-				<string>S</string>
+				<string>E</string>
 			</dict>
 			<key>signature</key>
 			<string>Todoshka-aboswcunfkgfhnfbbjmadpvlduue</string>
 			<key>timeStartedRecording</key>
-			<real>693500513.01830494</real>
+			<real>693594095.035357</real>
 			<key>timeStoppedRecording</key>
-			<real>693500514.00722694</real>
+			<real>693594096.41999304</real>
 			<key>title</key>
 			<string>Build target Todoshka</string>
 			<key>uniqueIdentifier</key>
-			<string>FCBAF884-3AD0-4220-85A9-D23399226D20</string>
+			<string>95171977-860F-4CE8-9173-CD3A69EECEA7</string>
 		</dict>
 		<key>FF772605-7EBD-4B48-AEDB-3507C156EC0A</key>
 		<dict>
