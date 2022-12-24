@@ -7,12 +7,12 @@
     <entity name="DescriptionText" representedClassName="DescriptionText" syncable="YES" codeGenerationType="class">
         <attribute name="text" optional="YES" attributeType="String"/>
         <attribute name="yes" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <relationship name="new" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="newRelationship" inverseEntity="Item"/>
+        <relationship name="new" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="newRelationship" inverseEntity="Item"/>
     </entity>
     <entity name="Item" representedClassName=".Item" syncable="YES" codeGenerationType="class">
         <attribute name="done" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="title" attributeType="String"/>
-        <relationship name="newRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DescriptionText" inverseName="new" inverseEntity="DescriptionText"/>
+        <relationship name="newRelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DescriptionText" inverseName="new" inverseEntity="DescriptionText"/>
         <relationship name="parentCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="items" inverseEntity="Category"/>
     </entity>
     <elements>

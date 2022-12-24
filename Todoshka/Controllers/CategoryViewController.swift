@@ -8,18 +8,25 @@
 import UIKit
 import CoreData
 
+class MyCell: UITableViewCell {
+    @IBOutlet weak var numberOfTask: UILabel!
+    
+    
+}
+
 class CategoryViewController: UITableViewController {
 
     var categoryArray = [Category]()
     
+    var todoList = TodoListViewController()
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         loadCategory()
     }
-    
     // MARK: - TableView Datasource Methods
         // display all categories
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -27,16 +34,21 @@ class CategoryViewController: UITableViewController {
     }
     //what should happen when we click inside of the category
 override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
     let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell",for: indexPath)
     cell.textLabel?.text = categoryArray[indexPath.row].name
+//    let cell1 = tableView.dequeueReusableCell(withIdentifier: "CategoryCell") as! MyCell
+//
+//    cell1.numberOfTask.text = String(todoList.itemArray.count)
+
+//    return cell1
     return cell
 }
     // MARK: - TableView Delegate Method
 
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        context.delete(categoryArray[indexPath.row])
-//        categoryArray.remove(at: indexPath.row)
+        
         self.performSegue(withIdentifier: "goToItems", sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
         saveCategory()
@@ -53,6 +65,20 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
         return .delete
     }
     
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            tableView.beginUpdates()
+            tableView.deleteRows(at: [indexPath], with: .right)
+            // для удаления обьектов с экрана и базы данных
+            context.delete(categoryArray[indexPath.row])
+            categoryArray.remove(at: indexPath.row)
+            
+            tableView.endUpdates()
+            tableView.reloadData()
+            saveCategory()
+        }
+    }
     //MARK: - Add new categories
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         var textField = UITextField()

@@ -13,6 +13,8 @@ var textList = [DescriptionText]()
 
 class TableOfInformation: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     var selectedText: DescriptionText? {
         didSet {
             loadItems()
@@ -60,10 +62,12 @@ class TableOfInformation: UIViewController, UITableViewDelegate, UITableViewData
             tableView.beginUpdates()
             tableView.deleteRows(at: [indexPath], with: .right)
             // для удаления обьектов с экрана и базы данных
+            context.delete(textList[indexPath.row])
             textList.remove(at: indexPath.row)
             
             tableView.endUpdates()
             tableView.reloadData()
+            saveText()
         }
     }
     
@@ -130,4 +134,13 @@ class TableOfInformation: UIViewController, UITableViewDelegate, UITableViewData
         }
         tableView.reloadData()
 }
+    
+    func saveText() {
+        do {
+            try context.save()
+        } catch {
+            print("Error saving context \(error)")
+        }
+        tableView.reloadData()
+    }
 }

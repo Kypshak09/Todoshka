@@ -157,9 +157,16 @@ class TodoListViewController: UITableViewController {
     // MARK: - description button
     @IBAction func informationButton(_ sender: UIButton) {
         navigationController?.pushViewController(TableOfInformation(), animated: true)
+        saveItem()
+        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            let destinationVC = segue.destination as! TableOfInformation
+            
+            if let indexPath = tableView.indexPathForSelectedRow {
+                destinationVC.selectedText = textList[indexPath.row]
+            }
+        }
     }
-}
-
+    }
 
 // MARK: - Search Bar methods
 extension TodoListViewController: UISearchBarDelegate  {
