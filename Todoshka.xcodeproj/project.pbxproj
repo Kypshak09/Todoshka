@@ -12,6 +12,9 @@
 		252800D829541E640011A1D9 /* InfromationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252800D729541E640011A1D9 /* InfromationViewController.swift */; };
 		252800E3295420A80011A1D9 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 252800E2295420A80011A1D9 /* SnapKit */; };
 		254977F2294A490A009F2AC9 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 254977F0294A490A009F2AC9 /* DataModel.xcdatamodeld */; };
+		257701372958722800DD4E89 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 257701362958722800DD4E89 /* FirebaseAuth */; };
+		257701392958722800DD4E89 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 257701382958722800DD4E89 /* FirebaseFirestore */; };
+		2577013B2958739F00DD4E89 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2577013A2958739F00DD4E89 /* ViewController.swift */; };
 		25BD8F81294B04C200C6698C /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BD8F80294B04C200C6698C /* CategoryViewController.swift */; };
 		25D2E55C294731980021D379 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D2E55B294731980021D379 /* AppDelegate.swift */; };
 		25D2E55E294731980021D379 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D2E55D294731980021D379 /* SceneDelegate.swift */; };
@@ -40,6 +43,7 @@
 		2516FAC72955F8980090BD62 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		252800D729541E640011A1D9 /* InfromationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfromationViewController.swift; sourceTree = "<group>"; };
 		254977F1294A490A009F2AC9 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		2577013A2958739F00DD4E89 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		25BD8F80294B04C200C6698C /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		25D2E558294731980021D379 /* Todoshka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todoshka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25D2E55B294731980021D379 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +62,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				252800E3295420A80011A1D9 /* SnapKit in Frameworks */,
+				257701372958722800DD4E89 /* FirebaseAuth in Frameworks */,
+				257701392958722800DD4E89 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +89,7 @@
 		25BDCF672948716F00411FDA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2577013A2958739F00DD4E89 /* ViewController.swift */,
 				25BD8F80294B04C200C6698C /* CategoryViewController.swift */,
 				25D2E55F294731980021D379 /* TodoListViewController.swift */,
 				2516FAC52955F3360090BD62 /* TableOfInformation.swift */,
@@ -159,6 +166,8 @@
 			name = Todoshka;
 			packageProductDependencies = (
 				252800E2295420A80011A1D9 /* SnapKit */,
+				257701362958722800DD4E89 /* FirebaseAuth */,
+				257701382958722800DD4E89 /* FirebaseFirestore */,
 			);
 			productName = Todoshka;
 			productReference = 25D2E558294731980021D379 /* Todoshka.app */;
@@ -191,6 +200,7 @@
 			packageReferences = (
 				252800D929541E9F0011A1D9 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				252800E1295420A80011A1D9 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				257701352958722800DD4E89 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 25D2E559294731980021D379 /* Products */;
 			projectDirPath = "";
@@ -219,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2577013B2958739F00DD4E89 /* ViewController.swift in Sources */,
 				2516FAC62955F3360090BD62 /* TableOfInformation.swift in Sources */,
 				2516FAC82955F8980090BD62 /* TableViewCell.swift in Sources */,
 				25BD8F81294B04C200C6698C /* CategoryViewController.swift in Sources */,
@@ -465,6 +476,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		257701352958722800DD4E89 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -472,6 +491,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 252800E1295420A80011A1D9 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		257701362958722800DD4E89 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 257701352958722800DD4E89 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		257701382958722800DD4E89 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 257701352958722800DD4E89 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */
 

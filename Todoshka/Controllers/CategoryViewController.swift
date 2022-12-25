@@ -10,8 +10,6 @@ import CoreData
 
 class MyCell: UITableViewCell {
     @IBOutlet weak var numberOfTask: UILabel!
-    
-    
 }
 
 class CategoryViewController: UITableViewController {
@@ -24,6 +22,7 @@ class CategoryViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         
         loadCategory()
     }
@@ -33,17 +32,19 @@ class CategoryViewController: UITableViewController {
         return categoryArray.count
     }
     //what should happen when we click inside of the category
-override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    
-    let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell",for: indexPath)
-    cell.textLabel?.text = categoryArray[indexPath.row].name
-//    let cell1 = tableView.dequeueReusableCell(withIdentifier: "CategoryCell") as! MyCell
-//
-//    cell1.numberOfTask.text = String(todoList.itemArray.count)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       
+       let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell",for: indexPath) as! MyCell
+       cell.textLabel?.text = categoryArray[indexPath.row].name
+       cell.numberOfTask.text = String(todoList.itemArray.count)
+   //    let cell1 = tableView.dequeueReusableCell(withIdentifier: "CategoryCell") as! MyCell
+   //
+   //    cell1.numberOfTask.text = String(todoList.itemArray.count)
 
-//    return cell1
-    return cell
-}
+   //    return cell1
+       return cell
+   }
+
     // MARK: - TableView Delegate Method
 
     

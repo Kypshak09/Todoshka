@@ -4,7 +4,6 @@ import CoreData
 class TodoListViewController: UITableViewController {
 
     var itemArray = [Item]()
-    
     var selectedCategory: Category? {
         didSet {
             loadItems()
@@ -38,7 +37,6 @@ class TodoListViewController: UITableViewController {
             saveItem()
         }
     }
-    
     // MARK: - Table view number of rows
         // метод выводящий количество клеток
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
