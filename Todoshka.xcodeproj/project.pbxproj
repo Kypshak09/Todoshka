@@ -14,7 +14,9 @@
 		254977F2294A490A009F2AC9 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 254977F0294A490A009F2AC9 /* DataModel.xcdatamodeld */; };
 		257701372958722800DD4E89 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 257701362958722800DD4E89 /* FirebaseAuth */; };
 		257701392958722800DD4E89 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 257701382958722800DD4E89 /* FirebaseFirestore */; };
-		2577013B2958739F00DD4E89 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2577013A2958739F00DD4E89 /* ViewController.swift */; };
+		25B61B78295DCBC1002CA5F0 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B61B77295DCBC1002CA5F0 /* EntryViewController.swift */; };
+		25B61B7A295DCBCB002CA5F0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B61B79295DCBCB002CA5F0 /* LoginViewController.swift */; };
+		25B61B7C295DCBD5002CA5F0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B61B7B295DCBD5002CA5F0 /* RegisterViewController.swift */; };
 		25BD8F81294B04C200C6698C /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BD8F80294B04C200C6698C /* CategoryViewController.swift */; };
 		25D2E55C294731980021D379 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D2E55B294731980021D379 /* AppDelegate.swift */; };
 		25D2E55E294731980021D379 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D2E55D294731980021D379 /* SceneDelegate.swift */; };
@@ -43,7 +45,9 @@
 		2516FAC72955F8980090BD62 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		252800D729541E640011A1D9 /* InfromationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfromationViewController.swift; sourceTree = "<group>"; };
 		254977F1294A490A009F2AC9 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
-		2577013A2958739F00DD4E89 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		25B61B77295DCBC1002CA5F0 /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
+		25B61B79295DCBCB002CA5F0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		25B61B7B295DCBD5002CA5F0 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		25BD8F80294B04C200C6698C /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		25D2E558294731980021D379 /* Todoshka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todoshka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25D2E55B294731980021D379 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,7 +93,9 @@
 		25BDCF672948716F00411FDA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				2577013A2958739F00DD4E89 /* ViewController.swift */,
+				25B61B77295DCBC1002CA5F0 /* EntryViewController.swift */,
+				25B61B79295DCBCB002CA5F0 /* LoginViewController.swift */,
+				25B61B7B295DCBD5002CA5F0 /* RegisterViewController.swift */,
 				25BD8F80294B04C200C6698C /* CategoryViewController.swift */,
 				25D2E55F294731980021D379 /* TodoListViewController.swift */,
 				2516FAC52955F3360090BD62 /* TableOfInformation.swift */,
@@ -229,9 +235,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2577013B2958739F00DD4E89 /* ViewController.swift in Sources */,
 				2516FAC62955F3360090BD62 /* TableOfInformation.swift in Sources */,
+				25B61B78295DCBC1002CA5F0 /* EntryViewController.swift in Sources */,
 				2516FAC82955F8980090BD62 /* TableViewCell.swift in Sources */,
+				25B61B7C295DCBD5002CA5F0 /* RegisterViewController.swift in Sources */,
 				25BD8F81294B04C200C6698C /* CategoryViewController.swift in Sources */,
 				254977F2294A490A009F2AC9 /* DataModel.xcdatamodeld in Sources */,
 				25D2E560294731980021D379 /* TodoListViewController.swift in Sources */,
@@ -239,6 +246,7 @@
 				25D2E55C294731980021D379 /* AppDelegate.swift in Sources */,
 				25D2E55E294731980021D379 /* SceneDelegate.swift in Sources */,
 				252800D829541E640011A1D9 /* InfromationViewController.swift in Sources */,
+				25B61B7A295DCBCB002CA5F0 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

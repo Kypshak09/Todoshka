@@ -37,10 +37,12 @@ class TodoListViewController: UITableViewController {
             saveItem()
         }
     }
+    // var number = 0
     // MARK: - Table view number of rows
         // метод выводящий количество клеток
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //количество клеток. зависит от array
+        // number = itemArray.count
         return itemArray.count
     }
     // MARK: - Table view do cell
